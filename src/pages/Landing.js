@@ -2,6 +2,7 @@ import React from 'react'
 import main from '../assets/images/main.svg'
 import Wrapper from '../assets/wrappers/LandingPage'
 import { Logo } from '../components'
+import { Link } from 'react-router-dom'
 
 const Landing = () => {
     return <Wrapper>
@@ -19,7 +20,7 @@ const Landing = () => {
                     Shabby chic whatever iceland, next level cronut plaid normcore godard synth dreamcatcher irony readymade gentrify hell of.
                     Grailed enamel pin selvage cold-pressed.
                 </p>
-                <button className='btn btn-hero'>Login/Register</button>
+                <Link to='/register' className='btn btn-hero'>Login/Register</Link>
             </div>
             <img src={main} alt='main' className='img main-img'/>
         </div>
