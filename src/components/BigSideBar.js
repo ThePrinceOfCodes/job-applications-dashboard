@@ -1,7 +1,9 @@
 import React from "react";
+import Wrapper from '../assets/wrappers/BigSidebar'
+
 
 const BigSideBar = () => {
-    return <h2>big side bar</h2>
+    return <Wrapper>big side bar</Wrapper>
 }
 
 export default BigSideBar
