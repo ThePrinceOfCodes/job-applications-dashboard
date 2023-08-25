@@ -54,7 +54,7 @@ const Register = () => {
             <FormRow name='email' type='email' value={values.email} handleChange={handleChange} labelText='email' />
             <FormRow name='password' type='password' value={values.password} handleChange={handleChange} labelText='password' /> 
             <button type="submit" className="btn btn-block" disabled={isLoading}>
-                { values.isMember ? 'Login' : 'Register'}
+                { isLoading? 'loading...': values.isMember ? 'Login' : 'Register'}
             </button>
             <p>
                 {values.isMember ? ('Not a member?') : 'Already a member'}
