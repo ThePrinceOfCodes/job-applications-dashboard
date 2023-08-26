@@ -1,3 +1,4 @@
+import React from 'react';
 import { IoBarChartSharp } from 'react-icons/io5';
 import { MdQueryStats } from 'react-icons/md';
 import { FaWpforms } from 'react-icons/fa';
@@ -13,7 +14,7 @@ const links = [
   {
     id: 2,
     text: 'all jobs',
-    path: 'all-jobs',
+    path: 'jobs',
     icon: <MdQueryStats />,
   },
   {
