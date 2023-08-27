@@ -28,6 +28,7 @@ const [userData,setUserData] = useState({
     }
       dispatch(updateUser(userData))
   };
+  
 const handleChange = (e) =>{
   const name = e.target.name
   const value = e.target.value

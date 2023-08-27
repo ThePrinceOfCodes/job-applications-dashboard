@@ -36,14 +36,18 @@ export const updateUser = createAsyncThunk(
   'user/updateUser',
   async (user, thunkAPI) => {
     try {
-      const resp = await customFetch.patch('/auth/updateUser', user, {
-        headers: {
-          authorization: `Bearer ${thunkAPI.getState().user.user.token}`,
-        },
-      });
+        const resp = await customFetch.patch('/auth/updateUser', user, {
+            headers: {
+            authorization: `Bearer ${thunkAPI.getState().user.user.token}`,
+            },
+        });
       return resp.data;
     } catch (error) {
-      return thunkAPI.rejectWithValue(error.response.data.msg);
+        if (error.response.status === 401) {
+            thunkAPI.dispatch(logoutUser());
+            return thunkAPI.rejectWithValue('Unauthorized!')
+        }
+        return thunkAPI.rejectWithValue(error.response.data.msg);
     }
   }
 );
