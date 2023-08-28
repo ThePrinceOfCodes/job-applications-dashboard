@@ -11,6 +11,9 @@ const Stats = () => {
         dispatch(showStats)
     }, [])
     
+    if (isLoading) {
+        return <Loading center />
+    }
     return <>
         <StatsContainer />
         {monthlyApplications && <ChartsContainer />}
