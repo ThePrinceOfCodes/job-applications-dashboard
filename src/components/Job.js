@@ -33,8 +33,8 @@ const Job = ({ _id:id, position, company, jobLocation, jobType, createdAt, statu
             </div>
             <footer>
                 <div className="actions">
-                    <Link to='/add-job' className="btn edit-btn" onClick={()=>dispatch(setEditJob())}>Edit</Link>
-                    <button className="btn delete-btn" onClick={()=>dispatch(deleteJob({ editJobId: id, position, company, jobLocation, jobType, status}))}> delete</button>
+                    <Link to='/add-job' className="btn edit-btn" onClick={()=>dispatch(setEditJob({ editJobId: id, position, company, jobLocation, jobType, status}))}>Edit</Link>
+                    <button className="btn delete-btn" onClick={()=>dispatch(deleteJob(id))}> delete</button>
                 </div>
             </footer>
         </div>
