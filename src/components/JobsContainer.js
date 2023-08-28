@@ -1,10 +1,34 @@
 import React from "react";
+import Job from "./Job";
+import { useEffect } from "react";
+import Wrapper from "../assets/wrappers/JobsContainer";
+import { useSelector, useDispatch } from "react-redux";
 
 const JobsContainer = () => {
+    const { jobs, isLoading } = useSelector((store) => store.allJobs);
+    const dispatch = useDispatch();
 
-    return <div>
-        <h1> job</h1>
-    </div>
+    if (isLoading) {
+        return <Wrapper>
+            <h2> Loading...</h2>
+        </Wrapper>
+    }
+
+    if (jobs.length === 0) {
+        return <Wrapper>
+            <h2> No jobs found</h2>
+        </Wrapper>
+    }
+    return (
+        <Wrapper>
+            <h5>{jobs.length} jobs found</h5>
+            <div className="jobs">
+                {jobs.map((job) => {
+                    return <Job key={job._id} {...job} />
+                })}
+            </div>
+        </Wrapper>
+    )
 }
 
 export default JobsContainer
