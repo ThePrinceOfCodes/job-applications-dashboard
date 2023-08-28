@@ -8,5 +8,7 @@ import FormRowSelect from "./FormRowSelect";
 import JobsContainer from "./JobsContainer";
 import SearchContainer from "./SearchContainer";
 import Job from "./Job";
+import ChartsContainer from "./ChartsContainer";
+import StatsContainer from "./StatsContainer";
 
-export { Logo, FormRow, BigSideBar, SmallSideBar, NavBar, NavLinks, FormRowSelect, Job, JobsContainer, SearchContainer }
+export { Logo, FormRow, BigSideBar, SmallSideBar, NavBar, NavLinks, FormRowSelect, Job, JobsContainer, SearchContainer, ChartsContainer, StatsContainer }
