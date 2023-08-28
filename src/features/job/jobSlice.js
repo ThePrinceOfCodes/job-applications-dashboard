@@ -16,6 +16,16 @@ const initialState = {
     editJobId: '',
 };
 
+export const createJob = createAsyncThunk(
+    'job/createJob', (job, thunkAPI) => {
+        try {
+            
+        } catch (error) {
+            
+        }
+    }
+)
+
 const jobSlice = createSlice({
     name: 'job',
     initialState,
@@ -26,6 +36,21 @@ const jobSlice = createSlice({
         clearValues: () => {
             return initialState
         }        
+    },
+    extraReducers: (builder) => {
+        builder
+            .addCase(createJob.pending, (state) => {
+                
+            })
+            .addCase(createJob.fulfilled, (state) => {
+                    
+            })
+            .addCase(createJob.rejected, (state) => {
+                
+            })
+            .addDefaultCase((state) => {
+                
+            })
     }
 });
 
