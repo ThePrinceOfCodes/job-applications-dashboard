@@ -6,7 +6,7 @@ const FormRow = ({ type, name, value, handleChange, labelText }) => {
             <label htmlFor={ name } className="form-label">
                 {labelText || name}
             </label>
-            <input type={type} name={name} value={value} className="form-input" onChange={handleChange}/>
+            <input type={type} name={name} value={value} id={name} className="form-input" onChange={handleChange}/>
         </div>
     )
 }
