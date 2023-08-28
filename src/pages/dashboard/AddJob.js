@@ -1,5 +1,5 @@
 import React from 'react';
-import { FormRow } from '../../components';
+import { FormRow, FormRowSelect } from '../../components';
 import Wrapper from '../../assets/wrappers/DashboardFormPage';
 import { useSelector, useDispatch } from 'react-redux';
 import { toast } from 'react-toastify';
@@ -63,27 +63,20 @@ const AddJob = () => {
                     handleChange={handleJobInput}
                 />
                 {/* job status */}
-                 <div className='form-row'>
-                    <label htmlFor='status' className='form-label'>
-                        status
-                    </label>
-                    <select
-                        name='status'
-                        value={status}
-                        onChange={handleJobInput}
-                        className='form-select'
-                    >
-                    {statusOptions.map((itemValue, index) => {
-                        return (
-                        <option key={index} value={itemValue}>
-                            {itemValue}
-                        </option>
-                        );
-                    })}
-                    </select>
-                </div>
-
+                 <FormRowSelect
+                    name='status'
+                    value={status}
+                    handleChange={handleJobInput}
+                    list={statusOptions}
+                />
                 {/* job type */}
+                <FormRowSelect
+                    name='jobType'
+                    labelText='job type'
+                    value={jobType}
+                    handleChange={handleJobInput}
+                    list={jobTypeOptions}
+                />  
 
                 {/* btn container */}
                 <div className='btn-container'>
