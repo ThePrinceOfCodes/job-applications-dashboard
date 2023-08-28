@@ -3,9 +3,11 @@ import { FaLocationArrow, FaBriefcase, FaCalendarAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import Wrapper from "../assets/wrappers/Job";
 import { useDispatch } from "react-redux";
+import JobInfoContainer from "./JobInfoComponent";
 
 const Job = ({ _id:id, position, company, jobLocation, jobType, createdAt, status }) => {
     const dispatch = useDispatch()
+    const date = createdAt
 
     return <Wrapper>
         <header>
@@ -19,7 +21,10 @@ const Job = ({ _id:id, position, company, jobLocation, jobType, createdAt, statu
         </header>
         <div className="content">
             <div className="content-center">
-                <h4>more content</h4>
+                <JobInfoContainer icon={<FaLocationArrow />} text={jobLocation} />
+                <JobInfoContainer icon={<FaCalendarAlt />} text={ date} />
+                <JobInfoContainer icon={<FaBriefcase />} text={ jobType} />
+
                 <div className={`status ${status}`}>
                     {status}
                 </div>
