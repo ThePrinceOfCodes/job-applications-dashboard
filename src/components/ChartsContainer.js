@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Wrapper from '../assets/wrappers/ChartsContainer';
 import { useSelector } from 'react-redux';
-import { AreaChatComponent, BarChartComponent } from '.';
+import { AreaChartComponent, BarChartComponent } from '.';
 
 const ChartsContainer = () => {
     const [barChart, setBarChart] = useState(true);

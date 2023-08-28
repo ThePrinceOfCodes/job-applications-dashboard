@@ -12,6 +12,6 @@ import ChartsContainer from "./ChartsContainer";
 import StatsContainer from "./StatsContainer";
 import Loading from "./Loading";
 import BarChartComponent from "./BarChartComponent";
-import AreaChatComponent from "./AreaChartComponent";
+import AreaChartComponent from "./AreaChartComponent";
 
-export { Logo, FormRow, BigSideBar, SmallSideBar, NavBar, NavLinks, FormRowSelect, Job, JobsContainer, SearchContainer, ChartsContainer, StatsContainer, Loading, AreaChatComponent, BarChartComponent }
+export { Logo, FormRow, BigSideBar, SmallSideBar, NavBar, NavLinks, FormRowSelect, Job, JobsContainer, SearchContainer, ChartsContainer, StatsContainer, Loading, AreaChartComponent, BarChartComponent }
