@@ -11,9 +11,10 @@ const Stats = () => {
         dispatch(showStats)
     }, [])
     
-    return <h1>
-        stats
-    </h1>
+    return <>
+        <StatsContainer />
+        {monthlyApplications && <ChartsContainer />}
+    </>
 }
 
 export default Stats
