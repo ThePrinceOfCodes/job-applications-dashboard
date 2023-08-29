@@ -13,5 +13,6 @@ import StatsContainer from "./StatsContainer";
 import Loading from "./Loading";
 import BarChartComponent from "./BarChartComponent";
 import AreaChartComponent from "./AreaChartComponent";
+import PageBtnContainer from "./PageBtnContainer";
 
-export { Logo, FormRow, BigSideBar, SmallSideBar, NavBar, NavLinks, FormRowSelect, Job, JobsContainer, SearchContainer, ChartsContainer, StatsContainer, Loading, AreaChartComponent, BarChartComponent }
+export { PageBtnContainer, Logo, FormRow, BigSideBar, SmallSideBar, NavBar, NavLinks, FormRowSelect, Job, JobsContainer, SearchContainer, ChartsContainer, StatsContainer, Loading, AreaChartComponent, BarChartComponent }
