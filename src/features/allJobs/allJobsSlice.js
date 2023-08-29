@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { toast } from 'react-toastify';
-import customFetch from '../../utils/axios';
+import customFetch, { checkForUnauthorizedResponse } from '../../utils/axios';
 
 const initialFiltersState = {
   search: '',
@@ -33,7 +33,7 @@ export const getAllJobs = createAsyncThunk('allJobs/getJobs', async (_, thunkAPI
     const resp = await customFetch.get(url)
     return resp.data
   } catch (error) {
-    return thunkAPI.rejectWithValue('there was an error')
+    return checkForUnauthorizedResponse(error, thunkAPI);
   }
 })
 
@@ -42,7 +42,7 @@ export const showStats = createAsyncThunk('allJobs/showStats',async (_, thunkAPI
       const resp = await customFetch.get('/jobs/stats');
       return resp.data;
     } catch (error) {
-      return thunkAPI.rejectWithValue(error.response.data.msg);
+      return checkForUnauthorizedResponse(error, thunkAPI);
     }
   })
 
@@ -98,5 +98,5 @@ const allJobsSlice = createSlice({
   }
 });
 
-export const { showLoading, hideLoading, handleChange, clearFilters, changePage} = allJobsSlice.actions
+export const { showLoading, hideLoading, handleChange, clearFilters, changePage, clearAllJobsState} = allJobsSlice.actions
 export default allJobsSlice.reducer;
