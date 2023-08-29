@@ -8,7 +8,7 @@ const Stats = () => {
     const {isLoading, monthlyApplications} = useSelector((store)=> store.allJobs)
     const dispatch = useDispatch()
     useEffect(() => {
-        dispatch(showStats)
+        dispatch(showStats())
     }, [])
     
     if (isLoading) {
@@ -16,7 +16,7 @@ const Stats = () => {
     }
     return <>
         <StatsContainer />
-        {monthlyApplications && <ChartsContainer />}
+        {monthlyApplications.length > 0 && <ChartsContainer />}
     </>
 }
 
