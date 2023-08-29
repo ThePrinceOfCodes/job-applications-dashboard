@@ -54,7 +54,7 @@ const allJobsSlice = createSlice({
       state[name] = value
     },
     clearFilters: (state) => {
-      return { ...state, ...initialState}
+      return { ...state, ...initialFiltersState}
     }
   },
   extraReducers: (builder) => {
